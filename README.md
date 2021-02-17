@@ -1,21 +1,26 @@
-# Just another seed for mine and your React projects 🤗
+> ❗ Work in progress
 
-## What is in the box? 📦
+Is it an another GamepadAPI helper library? Not quite...
 
-- Not a Solid🐍 or a 💎🐕
-- React
-- Typescript
-- Webpack
-- Storybook
-- Cypress
-- Jest
-- React Testing Library
+Goal of this library - ease adapting web interfaces for gamepad input. Approach suggested:
 
-✅ Storybook and Cypress runs on the Webpack config provided.
+- In declarative way Split UI for Input Layers and Input Focus Zones
+- Threat gamepad input events as any other input event, relying on DOM event bubbling
 
-## Misc and tweaks
+In particular:
 
-- Some Prettier config
-- Some Storybook helper functions to easily describe Stories in CSF-format
-- Changed Storybook Docs global render (you may remove "docs" section from "parameters" in ./storybook/preview.js file)
-- Two tsconfigs to avoid [Cypress/Jest typings collision](https://github.com/cypress-io/cypress-and-jest-typescript-example)
+Input Layer:
+
+- is responsible for emitting (if that Layer is active) and listening for custom gamepad input events
+- receives actual gamepad input state
+- normalizes axis via deadzones, additionally threat them as buttons
+- provides low-level subscription "onGamepadInput", notify subscribers with raw and normalized version of gamepad state (consumable for game logic)
+- provides hight-level subscribtions ("onGamepadButtonDown", "onGamepadButtonPressed", "onGamepadButtonUp", "onGamepadAxisChange") (consumable for ui)
+- stop custom gamepad input events propagation if necessary
+
+Input Focus Zone:
+
+- is responsible for fast traversing around the page
+- (if zIndex provided) "detaches" any Input Layers which are not nested in the top Focus Zone (usefull while dealing with modal dialogs and overlapping menus). Exception: Input Layers who recives gamepad input in "force mode".
+
+

@@ -1,0 +1,17 @@
+.gampepad-state-viewer {
+  display: inline-block;
+  padding: 24px;
+
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  background-color: black;
+}
+
+.gampepad-state-viewer__buttons,
+.gampepad-state-viewer__axes {
+  list-style: none;
+}
+
+.gampepad-state-viewer__buttons {
+  display: flex;
+}

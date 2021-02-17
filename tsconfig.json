@@ -1,12 +1,17 @@
 {
   "sourceMap": true,
   "compilerOptions": {
+    "lib": ["ESNext"],
     "jsx": "react",
     "baseUrl": "./",
     "types": ["jest"],
     "paths": {
+      "#interfaces/*": ["src/interfaces/*"],
       "#components/*": ["src/components/*"],
-      "#storybook/*": [".storybook/*"]
+      "#storybook/*": [".storybook/*"],
+      "#events/*": ["src/events/*"],
+      "#entities/*": ["src/entities/*"],
+      "#utils/*": ["src/utils/*"]
     }
   },
   "exclude": ["cypress/", "src/**/*.component.tests.tsx"]

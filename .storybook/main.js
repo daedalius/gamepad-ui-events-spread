@@ -1,7 +1,7 @@
-const { resolve } = require('path');
-const createMdxCompiler = require('@storybook/addon-docs/dist/mdx/mdx-compiler-plugin.js');
+const { resolve } = require('path')
+const createMdxCompiler = require('@storybook/addon-docs/dist/mdx/mdx-compiler-plugin.js')
 
-const projectWebpackConfig = require('../webpack.config');
+const projectWebpackConfig = require('../webpack.config')
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -27,13 +27,13 @@ module.exports = {
         ],
       },
       ...projectWebpackConfig.module.rules,
-    ];
+    ]
 
     config.resolve.alias = {
       ...(projectWebpackConfig.resolve.alias || {}),
       '#storybook': resolve(__dirname, `./`),
-    };
+    }
 
-    return config;
+    return config
   },
-};
+}

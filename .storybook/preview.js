@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import { Title, Stories, Description } from '@storybook/addon-docs/blocks';
+import { Title, Stories, Description } from '@storybook/addon-docs/blocks'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -14,4 +14,4 @@ export const parameters = {
       </>
     ),
   },
-};
+}

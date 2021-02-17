@@ -1,6 +1,7 @@
 {
   "sourceMap": true,
   "compilerOptions": {
+    "lib": ["ESNext"],
     "jsx": "react",
     "baseUrl": "/",
     "types": ["cypress"],

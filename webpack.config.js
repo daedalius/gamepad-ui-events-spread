@@ -1,10 +1,11 @@
-const { resolve } = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { resolve } = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  mode: 'development',
   entry: './src/main.tsx',
   output: {
-    path: resolve('./dist/app')
+    path: resolve('./dist/app'),
   },
   module: {
     rules: [
@@ -38,8 +39,12 @@ module.exports = {
   resolve: {
     alias: {
       '#components': resolve(__dirname, `./src/components`),
+      '#interfaces': resolve(__dirname, `./src/interfaces`),
+      '#events': resolve(__dirname, `./src/events`),
+      '#entities': resolve(__dirname, `./src/entities`),
+      '#utils': resolve(__dirname, `./src/utils`),
     },
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
-};
+}

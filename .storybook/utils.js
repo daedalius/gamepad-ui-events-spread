@@ -15,18 +15,18 @@ export function describeStories(stories, description) {
  * @param {string} storyDescription Story name to display on the "Docs" page. MD format allowed.
  */
 export function describeStory(story, storyName, storyDescription) {
-  set(story, 'storyName', storyName);
-  set(story, 'story.parameters.docs.storyDescription', storyDescription);
-  return story;
+  set(story, 'storyName', storyName)
+  set(story, 'story.parameters.docs.storyDescription', storyDescription)
+  return story
 }
 
 function set(obj, path, value) {
-  const pList = path.split('.');
-  const key = pList.pop();
+  const pList = path.split('.')
+  const key = pList.pop()
   const pointer = pList.reduce((accumulator, currentValue) => {
-    if (accumulator[currentValue] === undefined) accumulator[currentValue] = {};
-    return accumulator[currentValue];
-  }, obj);
-  pointer[key] = value;
-  return obj;
+    if (accumulator[currentValue] === undefined) accumulator[currentValue] = {}
+    return accumulator[currentValue]
+  }, obj)
+  pointer[key] = value
+  return obj
 }

@@ -8,4 +8,4 @@ export default {
     '.+\\.(css|styl|less|sass|scss)$': 'jest-css-modules-transform',
   },
   transformIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$'],
-};
+}
